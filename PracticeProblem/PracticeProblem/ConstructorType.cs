@@ -8,39 +8,30 @@ namespace PracticeProblem
 {
     public class ConstructorType
     {
-           public string name;
-            public int age;
-            //Default Constructor
-            public ConstructorType()
-            {
-                Console.WriteLine($"This is Default Constructor.....");
-            }
-            //Parameterized Constructor
-            public ConstructorType(string name, int age)
-            {
-                this.name = name;
-                this.age = age;
-            }
-            //To get the Output of the Parameterized Constructor.
-            public void Output()
-            {
-                Console.WriteLine($"name: {name}");
-                Console.WriteLine($"Age : {age}");
-            }
+        public int age = 20;
 
-            //Copy Constructor: The constructor which creates an object by copying variables from another object is called a copy constructor
-            public string car;
-            public string Hp;
-            public ConstructorType(string Model, string Hp)
-            {
-                this.car = Model;
-                this.Hp = Hp;
-            }
-            public ConstructorType(ConstructorType typ)
-            {
-                car = typ.car;
-                Hp = typ.Hp;
-            }
-        
+        //Private Access Modifier.
+        //The code is only accessible within the same class
+        private string name = "Ankita";
+        public String Name
+        {
+            get { return name; }
+            set { name = value; }
+        }
+
+        //Protected
+        //The code is accessible within the same class, or in a class that is inherited from that class.
+        protected string brand = "Volvo";
+        public string Brand
+        {
+            get { return Brand; }
+            set { Brand = value; }
+        }
+    }
+    //Internal
+    internal class InternalDemo
+    {
+        public string brand = "BMW";
+
     }
 }
